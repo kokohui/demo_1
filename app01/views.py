@@ -1,16 +1,20 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
 import json
-from django.views import View
-
-# Create your views here.
+from .spider import SpidersXing
 
 
-class Login(View):
-    def get(self, request, format=None):
-        res = {
-            'name': 'konghui'
-        }
+def spider_post(request):
 
-        res = json.dumps(res)
-        return HttpResponse(res)
+    if request.method == "POST":
+        start_url = request.POST.get('start_url')
+        spider = SpidersXing(start_url)
+        item = spider.parse_xing()
+        item = json.dumps(item)
+        print(item)
+
+        return HttpResponse(item)
+
+
+
+
 
