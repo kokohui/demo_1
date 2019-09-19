@@ -42,4 +42,4 @@ def main(start_url):
 
 
 if __name__ == '__main__':
-    c = main('https://www.lazada.com.my/shop-mobiles/')
+    main('https://www.lazada.com.my/shop-mobiles/')
