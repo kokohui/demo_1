@@ -3,6 +3,8 @@ import json
 from app01.spider.spider_class import SpidersXing
 from app01.spider.spider_keys import SpidersShop, main
 from app01.analysis.ana_class import percentage_xing
+from app01.analysis.ana_keys import price_key, discount_key, seller_len
+from itertools import chain
 
 
 def spider_category(request):
@@ -41,14 +43,28 @@ def spider_keyword(request):
         pags = request.POST.get('pags')
         if pags == None:
             pags = 2
-        print(keyword, pags)
 
-        item = main(int(pags), keyword)
+        price_list_list = []
+        review_list_list = []
+        discount_list_list = []
+        percentRate_list_list = []
+        sellerName_list_list = []
 
-        item = json.dumps(item)
-        print(item)
-
-        return HttpResponse(item)
+        item_list = main(int(pags), keyword)
+        for item_data in item_list:
+            price_list_list.append(item_data['price_list'])
+            review_list_list.append(item_data['review_list'])
+            discount_list_list.append(item_data['discount_list'])
+            percentRate_list_list.append(item_data['percentRate_list'])
+            sellerName_list_list.append(item_data['sellerName_list'])
+        item_al = {}
+        item_al['item_price'] = price_key(sum(price_list_list, []))
+        item_al['item_review'] = price_key(sum(review_list_list, []))
+        item_al['item_discount'] = discount_key(sum(discount_list_list, []))
+        item_al['item_percent'] = discount_key(sum(percentRate_list_list, []))
+        item_al['item_sellerName'] = seller_len(sum(sellerName_list_list, []))
+        item_list_all = json.dumps(item_al)
+        return HttpResponse(item_list_all)
 
     return HttpResponse('spdier_keyword')
 

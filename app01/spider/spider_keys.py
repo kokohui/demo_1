@@ -38,9 +38,10 @@ class SpidersShop():
             review = item.get("review")
             discount = item.get("discount")
 
+
             price_list.append(price)
             review_list.append(review)
-            discount_list.append(discount)
+            discount_list.append(str(discount))
 
         self.item['price_list'] = price_list
         self.item['review_list'] = review_list
