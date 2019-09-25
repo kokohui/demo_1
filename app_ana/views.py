@@ -14,8 +14,11 @@ def spider_category(request):
         start_url = request.POST.get('start_url')
         spider = SpidersXing(start_url)
 
-        item = {}
-        item_1 = spider.parse_xing()
+        # item = {}
+        # item_1 = spider.parse_xing()
+        item_all = spider.parse_pro()
+
+        item_1 = item_all.get('item_tip')
         item_2 = {}
         tips = item_1.get('tips')
         percentage_1 = percentage_xing(tips, item_1.get('tips_1'))
@@ -28,19 +31,19 @@ def spider_category(request):
         item_2['percentage_3'] = percentage_3
         item_2['percentage_4'] = percentage_4
         item_2['percentage_5'] = percentage_5
-        item['tip'] = item_1
-        item['percentage'] = item_2
 
-        item = json.dumps(item)
-        print(item)
+        item_all['item_tip']['percentage'] = item_2
 
-        return HttpResponse(item)
+        item_all_json = json.dumps(item_all)
+
+        return HttpResponse(item_all_json)
     return HttpResponse('spdier_category')
 
 
 def spider_keyword(request):
     if request.method == "POST":
         keyword = request.POST.get('keyword')
+        print(keyword)
         pags = request.POST.get('pags')
         if pags == None:
             pags = 2
@@ -69,6 +72,7 @@ def spider_keyword(request):
 
     return HttpResponse('spdier_keyword')
 
+
 class Login(View):
     def get(self, request, format=None):
         res = {
@@ -76,6 +80,7 @@ class Login(View):
         }
         # res = json.dumps(res)
         return render(request,'login.html')
+
 
 class Index(View):
     def get(self, request, format=None):
@@ -93,13 +98,15 @@ class Index(View):
         res = json.dumps(res)
         return HttpResponse(res)
 
+
 class Spider(View):
     def get(self, request, format=None):
         res = {
             'name': 'konghui'
         }
         res = json.dumps(res)
-        return render(request, 'spider.html')
+        return render(request, '../spider.html')
+
 
 class Menu(View):
     def get(self, request, format=None):
@@ -122,6 +129,7 @@ class Menu(View):
             }
         res = json.dumps(res)
         return HttpResponse(res)
+
 
 class Goods(View):
     def get(self, request, format=None):

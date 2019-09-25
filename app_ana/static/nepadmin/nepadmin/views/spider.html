@@ -266,7 +266,7 @@
         form.on('submit(component-form-element)', function (data) {
             layer.msg(JSON.stringify(data.field));
             var json = JSON.stringify(data.field);
-            $.get("/menu",{city:json.city},function (data) {
+            $.post("/login/login_2",{keyword:'sss',spage:1},function (data) {
                 console.log(data);
             },"json");
             return false;
