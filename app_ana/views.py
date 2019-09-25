@@ -1,10 +1,10 @@
 from django.shortcuts import render, HttpResponse, redirect
 import json
 from app_ana.spider.spider_class import SpidersXing
-from app_ana.spider.spider_keys import SpidersShop, main
+from app_ana.spider.spider_detail import SpidersXing2
+from app_ana.spider.spider_keys import main
 from app_ana.analysis.ana_class import percentage_xing
 from app_ana.analysis.ana_keys import price_key, discount_key, seller_len
-from itertools import chain
 from django.views import View
 
 
@@ -12,13 +12,13 @@ def spider_category(request):
 
     if request.method == "POST":
         start_url = request.POST.get('start_url')
+        start_url= start_url.split('?')[0]
         spider = SpidersXing(start_url)
 
-        # item = {}
-        # item_1 = spider.parse_xing()
-        item_all = spider.parse_pro()
+        item = {}
+        item_1 = spider.parse_xing()
 
-        item_1 = item_all.get('item_tip')
+        item_1 = item_1.get('item_tip')
         item_2 = {}
         tips = item_1.get('tips')
         percentage_1 = percentage_xing(tips, item_1.get('tips_1'))
@@ -32,8 +32,21 @@ def spider_category(request):
         item_2['percentage_4'] = percentage_4
         item_2['percentage_5'] = percentage_5
 
-        item_all['item_tip']['percentage'] = item_2
+        item['tip'] = item_1
+        item['percentage'] = item_2
 
+        item_all_json = json.dumps(item)
+
+        return HttpResponse(item_all_json)
+    return HttpResponse('spdier_category')
+
+
+def spider_detail(request):
+
+    if request.method == "POST":
+        start_url = request.POST.get('start_url')
+        spider = SpidersXing2(start_url)
+        item_all = spider.parse_pro_2()
         item_all_json = json.dumps(item_all)
 
         return HttpResponse(item_all_json)
@@ -105,7 +118,7 @@ class Spider(View):
             'name': 'konghui'
         }
         res = json.dumps(res)
-        return render(request, '../spider.html')
+        return render(request, '../app_ana/templates/spider.html')
 
 
 class Menu(View):
