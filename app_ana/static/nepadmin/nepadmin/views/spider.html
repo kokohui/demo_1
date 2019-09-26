@@ -1,193 +1,369 @@
-<div class="layui-fluid" id="VIEW-list-table" lay-title="表格列表">
-  <div class="layui-row layui-col-space10">
-    <div class="layui-col-md10">
-      <div class="layui-card">
-        <div class="layui-card-body nepadmin-table-full">
-          <div class="layui-btn-container nepadmin-pad-t10 nepadmin-pad-l10">
-            <div class="layui-btn layui-btn-sm">添加商品</div>
-            <div class="layui-btn layui-btn-sm layui-btn-primary table-action" data-type="lower">下架</div>
-            <div class="layui-btn layui-btn-sm layui-btn-primary table-action" data-type="del">删除</div>
-            <div class="layui-btn layui-btn-sm layui-btn-primary table-action" data-type="move">移动分类</div>
-            <div class="layui-btn layui-btn-sm layui-btn-primary table-action" data-type="refresh">刷新页面</div>
-            <div class="layui-btn layui-btn-sm layui-btn-primary action-more">
-              <i class="layui-icon">&#xe875;</i>
-            </div>
-            <div class="layui-btn layui-btn-sm layui-btn-primary">
-              URL信息：
-              <script type="text/html" template>
-{#                {{ JSON.stringify(layui.router()) }}#}
-              </script>
-            </div>
-          </div>
-          <table id="list-table" lay-filter="list-table"></table>
-        </div>
-      </div>
-    </div>
-    <div class="layui-col-md2">
-      <div class="layui-card">
-        <div class="layui-card-header">筛选数据</div>
-        <div class="layui-card-body">
-          <div class="layui-row layui-col-space10 layui-form">
-            <div class="layui-col-md12 layui-col-xs4">
-              <select name="type">
-                <option value="">销售状况</option>
-                <option value="1">出售中</option>
-                <option value="2">已售罄</option>
-                <option value="3">仓库中</option>
-              </select>
-            </div>
-            <div class="layui-col-md12 layui-col-xs4">
-              <select name="status">
-                <option value="">商品类型</option>
-                <option value="1">实物商品</option>
-                <option value="2">虚拟商品</option>
-                <option value="3">电子卡券</option>
-                <option value="4">付费会员卡</option>
-                <option value="5">酒店商品</option>
-              </select>
-            </div>
-            <div class="layui-col-md12 layui-col-xs4">
-              <select name="group">
-                <option value="">商品分组</option>
-                <option value="1">最新商品</option>
-                <option value="2">最热商品</option>
-              </select>
-            </div>
-            <div class="layui-col-md12">
-              <div class="layui-row layui-col-space10">
-                <div class="layui-col-md6 layui-col-xs6">
-                  <input type="text" class="layui-input" placeholder="最高销量" />
-                </div>
-                <div class="layui-col-md6 layui-col-xs6">
-                  <input type="text" class="layui-input" placeholder="最低销量" />
-                </div>
-              </div>
-            </div>
-            <div class="layui-col-md12 layui-col-xs12">
-              <div class="layui-row layui-col-space10">
-                <div class="layui-col-xs6">
-                  <div class="layui-btn layui-btn-sm layui-btn-fluid">筛选</div>
-                </div>
-                <div class="layui-col-xs6">
-                  <div class="layui-btn layui-btn-sm layui-btn-fluid layui-btn-primary">重置</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+<div class="layui-fluid" lay-title="类目选品">
 
-      <div class="layui-card nepadmin-font-12">
-        <div class="layui-card-header">
-          <i class="layui-icon">&#xe78c;</i> 帮助中心</div>
-        <div class="layui-card-extra">
-          <a>进入</a>
+   <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12">
+            <div class="layui-card">
+                <form class="layui-form" action="" >
+                    <div class="layui-row layui-col-space10 layui-form-item">
+                        <div class="layui-col-md3">
+                            <label class="layui-form-label">类网址：</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="start_url" value="https://www.lazada.com.my/shop-mobiles/?spm=a2o4k.searchlistcategory.cate_1_1.1.466e6883YBR09a" lay-verify="required" placeholder="请输入类网址" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-col-md3">
+                            <label class="layui-form-label">星级：</label>
+                            <div class="layui-input-block">
+                                <!--   <input type="text" name="fullname" placeholder="请输入页码" autocomplete="off" class="layui-input" /> -->
+                                  <select name="star"  class="layui-select">
+                                      <option value="">全部产品</option>
+                                      <option value="1">1星</option>
+                                      <option value="2">2星</option>
+                                      <option value="3">3星</option>
+                                      <option value="4">4星</option>
+                                      <option value="5">5星</option>
+                                 </select>
+                            </div>
+                        </div>
+                        <div class="layui-col-md3">
+                            <label class="layui-form-label">页码：</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="pags" placeholder="请输入页码" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-col-md3">
+                             <button class="layui-btn layui-btn-sm" lay-submit lay-filter="component-form-element">星级查询</button>
+                             <button class="layui-btn layui-btn-sm" lay-submit lay-filter="component-form-element-more">多页采集</button>
+                             <!--<button class="layui-btn layui-btn-sm" lay-submit lay-filter="component-form-element">导出表格</button>-->
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
-        <div class="layui-card-body">
-          <p>商品在出售中列表找不到？</p>
-          <p class="nepadmin-c-gray">商品售罄库存为0，在已售罄列表中，提醒您该添加库存了。待付款订单也会占据库存，其超时关闭后库存才会释放。</p>
-          <hr/>
-          <p>
-            <a>如何新建／发布商品？</a>
-          </p>
-          <p>
-            <a>如何管理商品？</a>
-          </p>
-          <p>
-            <a>商品如何排序？</a>
-          </p>
-          <p>
-            <a>商品销量找不到对应的订单？</a>
-          </p>
-          <p>
-            <a>商品二维码使用说明</a>
-          </p>
-          <p>
-            <a>商品可以设置用积分兑换吗？</a>
-          </p>
-        </div>
-      </div>
+   </div>
 
+    <div class="layui-row layui-col-space15">
+       <div class="layui-col-md12">
+              <div class="layui-card">
+                <div class="layui-card-header">各星级产品数</div>
+                 <div class="layui-card-body layui-row layui-col-space10">
+                <table class="layui-table" >
+                  <thead>
+                    <tr>
+                      <th>商品总数</th>
+                      <th>1星数</th>
+                      <th>2星数</th>
+                      <th>3星数</th>
+                      <th>4星数</th>
+                      <th>5星数</th>
+                    </tr>
+                  </thead>
+                  <tbody id="star">
+
+                  </tbody>
+                </table>
+                 </div>
+              </div>
+       </div>
     </div>
-  </div>
-  <script type="text/html" id="TPL-list-table-params">
-        {{# layui.each(d.params,function(i,item){ }}
-        <span class="layui-badge-rim">{{ item.val }}</span>
-        {{# }) }}
-    </script>
-  <script type="text/html" id="TPL-list-table-status">
-        {{#
-            var status = {
-                WAIT_PAY:{title:'待付款',color:'blue'},
-                WAIT_DELIVER:{title:'待发货',color:'orange'},
-                WAIT_REFUND:{title:'待退款',color:'red'},
-            }[d.status];
-        }}
-        <span class="layui-badge layui-bg-{{status.color}}">{{ status.title }}</span>
-    </script>
+
+
+
+
+
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md6">
+            <div class="layui-card">
+                <div class="layui-card-header">产品统计数</div>
+                <div class="layui-card-body layui-row layui-col-space10">
+                   <table class="layui-table" >
+                  <thead>
+                    <tr>
+                      <th>项目</th>
+                      <th>最高</th>
+                      <th>最低</th>
+                      <th>平均</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>促销价</td>
+                      <td id="cxj_h"></td>
+                      <td id="cxj_l"></td>
+                      <td id="cxj_a"></td>
+                    </tr>
+                    <tr>
+                      <td>评分</td>
+                      <td id="pf_h"></td>
+                      <td id="pf_h"></td>
+                      <td id="pf_h"></td>
+                    </tr>
+                  <tr>
+                      <td>评价数</td>
+                      <td id="pj_h"></td>
+                      <td id="pj_h"></td>
+                      <td id="pj_h"></td>
+                    </tr>
+                    <tr>
+                      <td>店铺折扣比</td>
+                      <td id="dpzk_h"></td>
+                      <td id="dpzk_h"></td>
+                      <td id="dpzk_h"></td>
+                    </tr>
+                  <tr>
+                      <td>店铺好评率</td>
+                      <td id="dphp_h"></td>
+                      <td id="dphp_l"></td>
+                      <td id="dphp_a"></td>
+                    </tr>
+                    <tr>
+                      <td>店铺总数</td>
+                      <td id="dpzs_h"></td>
+                      <td id="dpzs_l"></td>
+                      <td id="dpzs_a"></td>
+                    </tr>
+                  </tbody>
+                </table>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md6">
+            <div class="layui-card layui-form" lay-filter="component-form-element">
+                <div class="layui-card-header">产品信息</div>
+               <div class="layui-card-body layui-row layui-col-space10">
+                   <table class="layui-table" >
+                  <tbody>
+                  <tr style="height: 78px">
+                      <td rowspan="6"  width="150" id="xproUrl" align="center"></td>
+                      <td colspan="4" id="xtitle">标题：</td>
+                    </tr>
+                    <tr>
+                      <td>价格：</td>
+                      <td id="xprice"></td>
+                      <td>品牌：</td>
+                      <td id="xbrand"></td>
+                    </tr>
+
+                    <tr>
+                      <td>评分：</td>
+                      <td id="xscore"></td>
+                      <td>评论数：</td>
+                      <td id="xevaNum"></td>
+                    </tr>
+                   <tr>
+                      <td>好评率：</td>
+                      <td id="xpercentRate"></td>
+                      <td>年限：</td>
+                      <td id="xkeepTime"></td>
+                    </tr>
+                  <tr>
+                      <td>店铺名称：</td>
+                      <td colspan="3" id="xsellerKey"></td>
+                    </tr>
+                  <tr>
+                      <td>发货地址：</td>
+                      <td colspan="3" id="xlocation"></td>
+                    </tr>
+                  </tbody>
+                </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+ <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12">
+            <div class="layui-card">
+                <div class="layui-card-header">产品列表</div>
+                <div class="layui-card-body layui-row layui-col-space10">
+                       <table class="layui-table" >
+                          <thead>
+                            <tr>
+                              <th>序号</th>
+                              <th>品牌</th>
+                              <th>发货地</th>
+                              <th>店铺名称</th>
+                              <th>店铺等级</th>
+                              <th>店铺好评率</th>
+                              <th>店铺网址</th>
+                           <!--   <th>页码位置</th>-->
+                              <th>录入时间</th>
+                              <th>搜索类型</th>
+                            </tr>
+                          </thead>
+                          <tbody id="prolist">
+
+                          </tbody>
+                        </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
 </div>
+
 <script>
-  layui.use(['admin', 'table', 'form', 'dropdown', 'jquery'], function (admin, table, form, dropdown, $) {
-    var view = $('#VIEW-list-table');
 
-    var tableFilter = 'list-table';
-    form.render();
-    table.render({
-      elem: '[lay-filter="' + tableFilter + '"]',
-      api: 'getGoods',
-      height: 'full-165',
-      cols: [[
-        { title: '', type: 'checkbox', fixed: true, width: 60 },
-        { title: '状态', templet: '#TPL-list-table-status', width: 80 },
-        { title: '商品名称', field: 'title', minWidth: 300 },
-        { title: '商品参数', templet: '#TPL-list-table-params', minWidth: 240 },
-        { title: '商品单价', templet: '<p><b class="nepadmin-c-red">￥{{d.price}}</b></p>', align: 'center', width: 90 },
-        { title: '购买数量', templet: '<p><b>{{d.buycount}}</b> <span class="nepadmin-c-gray">件</span></p>', align: 'center', width: 90 },
-        { field: 'time', title: '操作时间', templet: '<p><span title="{{d.time}}" class="nepadmin-c-gray">{{ layui.util.timeAgo(d.time)}}</span></p>', align: 'center', width: 170 }
-      ]]
+     var loadIndex = '';
+    layui.use(['admin', 'form'], function (admin, form) {
+        var $ = layui.$;
+        var element = layui.element;
+
+        form.render(null, 'component-form-element');
+        element.render('breadcrumb', 'breadcrumb');
+        form.render('select');
+
+        form.on('submit(component-form-element)', function (data) {
+            //layer.msg(JSON.stringify(data.field));
+            var json = data.field;
+            console.log(json.start_url);
+             loadIndex = layer.load(1, {
+                shade: [0.1, '#fff']
+            });
+            $.post("/login/login_2",{"start_url":json.start_url},function (data) {
+                console.log(data);
+                $ttr =  $("<tr></tr>");
+                $td = $(" <td>"+data.tip.tips+"</td>");
+                $td1 = $(" <td>"+data.tip.tips_1+"</td>");
+                $td2 = $(" <td>"+data.tip.tips_2+"</td>");
+                $td3 = $(" <td>"+data.tip.tips_3+"</td>");
+                $td4 = $(" <td>"+data.tip.tips_4+"</td>");
+                $td5 = $(" <td>"+data.tip.tips_5+"</td>");
+                $ttr.append($td).append($td1).append($td2).append($td3).append($td4).append($td5);
+
+                $("#star").append($ttr);
+
+                $percentage = $("<tr></tr>");
+                $ptd = $("<td>星级占比</td>");
+                $ptd1 = $(" <td>"+data.percentage.percentage_1+"</td>");
+                $ptd2 = $(" <td>"+data.percentage.percentage_2+"</td>");
+                $ptd3 = $(" <td>"+data.percentage.percentage_3+"</td>");
+                $ptd4 = $(" <td>"+data.percentage.percentage_4+"</td>");
+                $ptd5 = $(" <td>"+data.percentage.percentage_5+"</td>");
+
+                $percentage.append($ptd).append($ptd1).append($ptd2).append($ptd3).append($ptd4).append($ptd5);
+
+                $("#star").append($percentage);
+
+                layer.close(loadIndex);
+
+            },"json");
+            return false;
+        });
+
+           form.on('submit(component-form-element-more)', function (data) {
+            //layer.msg(JSON.stringify(data.field));
+             var json = data.field;
+             loadIndex = layer.load(1, {
+                shade: [0.1, '#fff']
+            });
+            $.post("/login/detail",{"start_url":json.start_url},function (data) {
+                console.log(data.commodityInfo);
+                var dataList = data.commodityInfo;
+                var lastData;
+                for(var i=0;i<dataList.length;i++){
+                    var data = dataList[i];
+                    var href = "<a target='_blank' href='"+data.con_home_url+"'>"+data.con_home_url+"</a>";
+                    $ttr =  $("<tr style='cursor:point' onclick='view(this)' xprice='"+data.price+"' xbrand='"+data.brand+"' xscore='"+data.score+"' xevaNum='"+data.evaNum+"' xpercentRate='"+data.percentRate+"' xtitle='"+data.title+"' xproUrl='"+data.proUrl+"' xlocation='"+data.location+"' xsellerKey='"+data.sellerKey+"' xkeepTime='"+data.keepTime+"'></tr>");
+                    $td = $(" <td>"+(i+1)+"</td>");
+                    $td1 = $(" <td>"+data.brand+"</td>");
+                    $td2 = $(" <td>"+data.location+"</td>");
+                    $td3 = $(" <td>"+data.sellerKey+"</td>");
+                    $td4 = $(" <td>"+data.shopSize+"</td>");
+                    $td5 = $(" <td>"+data.shopRating+"</td>");
+                  //  $td6 = $(" <td>"+data.keepTime+"</td>");
+                    $td7 = $(" <td>"+href+"</td>");
+                    $td8 = $(" <td>"+data.keepTime+"</td>");
+                    $td9 = $(" <td>类网址</td>");///.append($td6)
+                    $ttr.append($td).append($td1).append($td2).append($td3).append($td4).append($td5).append($td7).append($td8).append($td9);
+                    $("#prolist").append($ttr);
+
+                    view($ttr);
+
+
+
+                    //促销价
+                    $("#cxj_h").html();
+                    $("#cxj_l").html();
+                    $("#cxj_a").html();
+
+                    //评分
+                    $("#pf_h").html();
+                    $("#pf_l").html();
+                    $("#pf_a").html();
+
+                    //评价
+                    $("#pj_h").html();
+                    $("#pj_l").html();
+                    $("#pj_a").html();
+
+                   //店铺折扣比
+                    $("#dpzk_h").html();
+                    $("#dpzk_l").html();
+                    $("#dpzk_a").html();
+
+                  //店铺好评率
+                    $("#dphp_h").html();
+                    $("#dphp_l").html();
+                    $("#dphp_a").html();
+
+
+                    //店铺总数
+                    $("#dpzs_h").html();
+                    $("#dpzs_l").html();
+                    $("#dpzs_a").html();
+
+                     layer.close(loadIndex);
+                }
+
+
+
+            },"json");
+            return false;
+        });
+
+
+
+
+
     });
 
 
-    dropdown.render({
-      elem: view.find('.action-more'),
-      click: function (name, elem, event) {
-        console.log('点击了' + name);
-      },
-      options: [{
-        name: 'action1',
-        title: 'Menu 1'
-      }, {
-        name: 'action2',
-        title: 'Menu 2',
-        options: [{
-          name: 'action3',
-          title: 'Menu 3',
-        }, {
-          name: 'action4',
-          title: 'Menu 4',
-        }]
-      }]
-    });
-
-    view.find('.table-action').click(function () {
-      var type = $(this).attr('data-type')
-      if (type == 'refresh') {
-        //刷新当前页
-        layui.view.tab.refresh()
-
-        //刷新一个指定页，不用传入页面的参数
-        //layui.view.tab.refresh('/index')
-
-        return false;
-      }
-      var checkedCount = table.checkStatus(tableFilter).data.length;
-      if (checkedCount == 0) {
-        layer.msg('请先选择某行');
-      } else {
-        layer.msg($(this).html() + checkedCount + '项');
-      }
-    })
+    function view(o) {
+        var $ = layui.$;
+        var _this = $(o);
+        var xprice = _this.attr("xprice");
+        var xtitle = _this.attr("xtitle");
+        var xbrand = _this.attr("xbrand");
+        var xscore = _this.attr("xscore");
+        var xevaNum = _this.attr("xevaNum");
+        var xpercentRate = _this.attr("xpercentRate");
+        var xproUrl = _this.attr("xproUrl");
+        var xlocation = _this.attr("xlocation");
+        var xsellerKey = _this.attr("xsellerKey");
+        var xkeepTime = _this.attr("xkeepTime");
 
 
-  })
+        $("#xprice").html(xprice);
+        $("#xbrand").html(xbrand);
+        $("#xtitle").html("标题："+xtitle);
+        $("#xscore").html(xscore);
+        $("#xevaNum").html(xevaNum);
+        $("#xpercentRate").html(xpercentRate);
+        $("#xproUrl").html("<img src='"+xproUrl+"' width='140' height='140'>");
+        $("#xlocation").html(xlocation);
+        $("#xkeepTime").html(xkeepTime);
+        $("#xsellerKey").html(xsellerKey);
+
+
+        console.log(xprice,xbrand,xscore,xevaNum,xpercentRate,xproUrl,xlocation,xsellerKey,xkeepTime);
+
+
+
+
+
+    }
 </script>
