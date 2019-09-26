@@ -3,7 +3,7 @@ import re
 import json
 
 
-class SpidersXing2():
+class SpidersShop():
     def __init__(self, start_url):
         self.start_url = start_url
         self.headers = {
@@ -162,7 +162,7 @@ class SpidersXing2():
 
 
 def main2(start_url):
-    spider = SpidersXing2(start_url)
+    spider = SpidersShop(start_url)
     item = spider.parse_pro_2()
     print('总信息:', item, "结束了!!")
 

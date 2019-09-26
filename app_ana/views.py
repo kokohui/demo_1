@@ -1,10 +1,9 @@
 from django.shortcuts import render, HttpResponse, redirect
 import json
-from app_ana.spider.spider_class import SpidersXing
-from app_ana.spider.spider_detail import SpidersXing2
-from app_ana.spider.spider_keys import main
+from app_ana.spider.spider_class import SpidersXing,SpidersXing2
 from app_ana.analysis.ana_class import percentage_xing
 from app_ana.analysis.ana_keys import price_key, discount_key, seller_len, deliver
+from app_ana.spider.spider_shop import SpidersShop
 from django.views import View
 
 
@@ -41,13 +40,46 @@ def spider_category(request):
     return HttpResponse('spdier_category')
 
 
+def spider_xing_2(request):
+
+    if request.method == "POST":
+        start_url = request.POST.get('start_url')
+        start_url = 'https://www.lazada.com.my/catalog/?_keyori=ss&from=input&page={}&q=1'.format(start_url)
+        spider = SpidersXing2(start_url)
+
+        item = {}
+        item_1 = spider.parse_xing()
+
+        item_1 = item_1.get('item_tip')
+        item_2 = {}
+        tips = item_1.get('tips')
+        percentage_1 = percentage_xing(tips, item_1.get('tips_1'))
+        percentage_2 = percentage_xing(tips, item_1.get('tips_2'))
+        percentage_3 = percentage_xing(tips, item_1.get('tips_3'))
+        percentage_4 = percentage_xing(tips, item_1.get('tips_4'))
+        percentage_5 = percentage_xing(tips, item_1.get('tips_5'))
+        item_2['percentage_1'] = percentage_1
+        item_2['percentage_2'] = percentage_2
+        item_2['percentage_3'] = percentage_3
+        item_2['percentage_4'] = percentage_4
+        item_2['percentage_5'] = percentage_5
+
+        item['tip'] = item_1
+        item['percentage'] = item_2
+
+        item_all_json = json.dumps(item)
+
+        return HttpResponse(item_all_json)
+    return HttpResponse('spdier_category')
+
+
 def spider_detail(request):
 
     if request.method == "POST":
         start_url = request.POST.get('start_url')
-        spider = SpidersXing2(start_url)
+
+        spider = SpidersShop(start_url)
         item_all = spider.parse_pro_2()
-        # item_all_json = json.dumps(item_all)
 
         price_list_list = []
         review_list_list = []
@@ -87,37 +119,99 @@ def spider_detail(request):
     return HttpResponse('spdier_category')
 
 
-def spider_keyword(request):
+def spider_shop(request):
+
     if request.method == "POST":
-        keyword = request.POST.get('keyword')
-        print(keyword)
-        pags = request.POST.get('pags')
-        if pags == None:
-            pags = 2
+        start_url = request.POST.get('start_url')
+        start_url = start_url.split('?')[0].replace('shop/', '') + '?langFlag=en&q=All-Products&from=wangpu'
+
+        spider = SpidersShop(start_url)
+        item_all = spider.parse_pro_2()
 
         price_list_list = []
         review_list_list = []
+        score_list_list = []
+        shop_list_list = []
         discount_list_list = []
-        percentRate_list_list = []
-        sellerName_list_list = []
+        percent_list_list = []
+        seller_list_list = []
+        location_list_list = []
 
-        item_list = main(int(pags), keyword)
+        item_list = item_all.get("commodityInfo")
         for item_data in item_list:
-            price_list_list.append(item_data['price_list'])
-            review_list_list.append(item_data['review_list'])
-            discount_list_list.append(item_data['discount_list'])
-            percentRate_list_list.append(item_data['percentRate_list'])
-            sellerName_list_list.append(item_data['sellerName_list'])
-        item_al = {}
-        item_al['item_price'] = price_key(sum(price_list_list, []))
-        item_al['item_review'] = price_key(sum(review_list_list, []))
-        item_al['item_discount'] = discount_key(sum(discount_list_list, []))
-        item_al['item_percent'] = discount_key(sum(percentRate_list_list, []))
-        item_al['item_sellerName'] = seller_len(sum(sellerName_list_list, []))
-        item_list_all = json.dumps(item_al)
-        return HttpResponse(item_list_all)
+            price_list_list.append(item_data["price"])
+            review_list_list.append(item_data['evaNum'])
+            score_list_list.append(item_data['score'])
+            discount_list_list.append(item_data['discount'])
+            shop_list_list.append(item_data['shopSize'])
+            location_list_list.append(item_data['location'])
 
-    return HttpResponse('spdier_keyword')
+            percent_list_list.append(item_data['percentRate'])
+            seller_list_list.append(item_data['sellerKey'])
+        item_al = {}
+        item_al['item_price'] = price_key(price_list_list)
+        item_al['item_review'] = price_key(review_list_list)
+        item_al['item_score'] = price_key(score_list_list)
+        item_al['item_shop_size'] = price_key(shop_list_list)
+
+        item_al['item_discount'] = discount_key(discount_list_list)
+        item_al['item_percent'] = discount_key(percent_list_list)
+        item_al['item_sellerName'] = seller_len(seller_list_list)
+        item_al['location_list_list'] = deliver(location_list_list)
+
+        item_all['item_ana'] = item_al
+        item_list_all = json.dumps(item_all)
+
+        return HttpResponse(item_list_all)
+    return HttpResponse('spdier_category')
+
+
+def spider_keywords(request):
+
+    if request.method == "POST":
+        start_url = request.POST.get('start_url')
+        start_url = 'https://www.lazada.com.my/catalog/?_keyori=ss&from=input&page={}&q=1'.format(start_url)
+
+        spider = SpidersShop(start_url)
+        item_all = spider.parse_pro_2()
+
+
+        price_list_list = []
+        review_list_list = []
+        score_list_list = []
+        shop_list_list = []
+        discount_list_list = []
+        percent_list_list = []
+        seller_list_list = []
+        location_list_list = []
+
+        item_list = item_all.get("commodityInfo")
+        for item_data in item_list:
+            price_list_list.append(item_data["price"])
+            review_list_list.append(item_data['evaNum'])
+            score_list_list.append(item_data['score'])
+            discount_list_list.append(item_data['discount'])
+            shop_list_list.append(item_data['shopSize'])
+            location_list_list.append(item_data['location'])
+
+            percent_list_list.append(item_data['percentRate'])
+            seller_list_list.append(item_data['sellerKey'])
+        item_al = {}
+        item_al['item_price'] = price_key(price_list_list)
+        item_al['item_review'] = price_key(review_list_list)
+        item_al['item_score'] = price_key(score_list_list)
+        item_al['item_shop_size'] = price_key(shop_list_list)
+
+        item_al['item_discount'] = discount_key(discount_list_list)
+        item_al['item_percent'] = discount_key(percent_list_list)
+        item_al['item_sellerName'] = seller_len(seller_list_list)
+        item_al['location_list_list'] = deliver(location_list_list)
+
+        item_all['item_ana'] = item_al
+        item_list_all = json.dumps(item_all)
+
+        return HttpResponse(item_list_all)
+    return HttpResponse('spdier_category')
 
 
 class Login(View):
@@ -126,7 +220,7 @@ class Login(View):
             'name': 'konghui'
         }
         # res = json.dumps(res)
-        return render(request,'login.html')
+        return render(request, 'login.html')
 
 
 class Index(View):
