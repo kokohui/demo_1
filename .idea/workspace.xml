@@ -52,14 +52,14 @@
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.109351434">
+    <splitter split-orientation="horizontal" split-proportion="0.19607843">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app_ana/spider/spider_detail.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="17">
-                  <caret line="45" column="80" selection-start-line="45" selection-start-column="80" selection-end-line="45" selection-end-column="80" />
+                  <caret line="44" column="80" selection-start-line="44" selection-start-column="80" selection-end-line="44" selection-end-column="80" />
                   <folding>
                     <element signature="e#0#15#0" expanded="true" />
                     <element signature="e#105#333#0" />
@@ -96,14 +96,15 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app_ana/spider/spider_detail.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="113">
-                  <caret line="54" column="66" selection-start-line="54" selection-start-column="66" selection-end-line="54" selection-end-column="66" />
+                <state relative-caret-position="162">
+                  <caret line="84" lean-forward="true" selection-start-line="84" selection-end-line="84" />
                   <folding>
                     <element signature="e#0#15#0" expanded="true" />
                     <element signature="e#105#333#0" />
                     <element signature="e#371#899#0" />
-                    <element signature="e#1947#4404#0" />
-                    <element signature="e#4321#4459#0" />
+                    <element signature="e#936#3481#0" />
+                    <element signature="e#1075#3376#0" />
+                    <element signature="e#3010#3115#0" />
                   </folding>
                 </state>
               </provider>
@@ -176,9 +177,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="147" />
-    <option name="y" value="268" />
-    <option name="width" value="714" />
+    <option name="x" value="737" />
+    <option name="width" value="670" />
     <option name="height" value="1017" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -417,15 +417,16 @@
       <workItem from="1568854576045" duration="18373000" />
       <workItem from="1568948420726" duration="16114000" />
       <workItem from="1569380019273" duration="21255000" />
-      <workItem from="1569459474016" duration="6790000" />
+      <workItem from="1569459474016" duration="8579000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="106639000" />
+    <option name="totallyTimeSpent" value="108428000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1416" height="1026" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.022123894" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -441,7 +442,7 @@
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.3295964" />
       <window_info anchor="bottom" id="Database Changes" order="10" weight="0.44506726" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.70739913" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.4349776" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="13" weight="0.6042601" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -711,16 +712,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../Python36/Lib/site-packages/jedi/third_party/typeshed/third_party/2/tornado/util.pyi">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="431">
+          <caret line="42" column="8" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app_ana/spider/spider_detail.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="54" column="66" selection-start-line="54" selection-start-column="66" selection-end-line="54" selection-end-column="66" />
+        <state relative-caret-position="162">
+          <caret line="84" lean-forward="true" selection-start-line="84" selection-end-line="84" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
             <element signature="e#105#333#0" />
             <element signature="e#371#899#0" />
-            <element signature="e#1947#4404#0" />
-            <element signature="e#4321#4459#0" />
+            <element signature="e#936#3481#0" />
+            <element signature="e#1075#3376#0" />
+            <element signature="e#3010#3115#0" />
           </folding>
         </state>
       </provider>

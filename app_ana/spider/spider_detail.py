@@ -127,6 +127,13 @@ class SpidersXing2():
         except:
             print('空')
 
+        classInfo = ''
+        try:
+            classInfo = re.findall(r'{\"pdt_category\":\[(.*?)\]', res_text, re.S)[0]
+            classInfo = classInfo.replace('"', ' ').replace(',', '/')
+        except:
+            print('空')
+
         data['brand'] = brand
         data['title'] = title
         data['price'] = price
@@ -140,6 +147,7 @@ class SpidersXing2():
         data['shopSize'] = shopSize
         data['sellerKey'] = sellerKey
         data['shopRating'] = shopRating
+        data['classInfo'] = classInfo
         data['con_home_url'] = con_home_url
 
         return data
