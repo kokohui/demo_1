@@ -4,7 +4,7 @@ from app_ana.spider.spider_class import SpidersXing
 from app_ana.spider.spider_detail import SpidersXing2
 from app_ana.spider.spider_keys import main
 from app_ana.analysis.ana_class import percentage_xing
-from app_ana.analysis.ana_keys import price_key, discount_key, seller_len
+from app_ana.analysis.ana_keys import price_key, discount_key, seller_len, deliver
 from django.views import View
 
 
@@ -47,9 +47,43 @@ def spider_detail(request):
         start_url = request.POST.get('start_url')
         spider = SpidersXing2(start_url)
         item_all = spider.parse_pro_2()
-        item_all_json = json.dumps(item_all)
+        # item_all_json = json.dumps(item_all)
 
-        return HttpResponse(item_all_json)
+        price_list_list = []
+        review_list_list = []
+        score_list_list = []
+        shop_list_list = []
+        discount_list_list = []
+        percent_list_list = []
+        seller_list_list = []
+        location_list_list = []
+
+        item_list = item_all.get("commodityInfo")
+        for item_data in item_list:
+            price_list_list.append(item_data["price"])
+            review_list_list.append(item_data['evaNum'])
+            score_list_list.append(item_data['score'])
+            discount_list_list.append(item_data['discount'])
+            shop_list_list.append(item_data['shopSize'])
+            location_list_list.append(item_data['location'])
+
+            percent_list_list.append(item_data['percentRate'])
+            seller_list_list.append(item_data['sellerKey'])
+        item_al = {}
+        item_al['item_price'] = price_key(price_list_list)
+        item_al['item_review'] = price_key(review_list_list)
+        item_al['item_score'] = price_key(score_list_list)
+        item_al['item_shop_size'] = price_key(shop_list_list)
+
+        item_al['item_discount'] = discount_key(discount_list_list)
+        item_al['item_percent'] = discount_key(percent_list_list)
+        item_al['item_sellerName'] = seller_len(seller_list_list)
+        item_al['location_list_list'] = deliver(location_list_list)
+
+        item_all['item_ana'] = item_al
+        item_list_all = json.dumps(item_all)
+
+        return HttpResponse(item_list_all)
     return HttpResponse('spdier_category')
 
 

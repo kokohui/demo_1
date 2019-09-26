@@ -108,7 +108,7 @@ class SpidersXing2():
         except:
             print('空')
 
-        shopSize = ''
+        shopSize = 0
         try:
             shopSize = re.findall(r'\"shopSize\":\"(.*?)\"', con_data_json, re.S)[0]
         except:
@@ -134,6 +134,13 @@ class SpidersXing2():
         except:
             print('空')
 
+        discount = ''
+        try:
+            discount = re.findall(r'\"price\":{\"discount\":"(.*?)"', res_text, re.S)[0]
+        except:
+            print('空')
+
+
         data['brand'] = brand
         data['title'] = title
         data['price'] = price
@@ -141,13 +148,14 @@ class SpidersXing2():
         data['score'] = score
         data['percentRate'] = percentRate
         data['proUrl'] = proUrl
+        data['discount'] = discount
+        data['classInfo'] = classInfo
 
         data['location'] = location
         data['keepTime'] = keepTime
         data['shopSize'] = shopSize
         data['sellerKey'] = sellerKey
         data['shopRating'] = shopRating
-        data['classInfo'] = classInfo
         data['con_home_url'] = con_home_url
 
         return data
