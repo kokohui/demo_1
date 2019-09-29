@@ -113,36 +113,37 @@ def spider_detail(request):
             percent_list_list.append(item_data['percentRate'])
             seller_list_list.append(item_data['sellerKey'])
         item_al = {}
-        item_al['item_price'] = price_key(price_list_list)
-        item_al['item_review'] = price_key(review_list_list)
-        item_al['item_score'] = price_key(score_list_list)
-        item_al['item_shop_size'] = price_key(shop_list_list)
+        item_al["item_price"] = price_key(price_list_list)
+        item_al["item_review"] = price_key(review_list_list)
+        item_al["item_score"] = price_key(score_list_list)
+        item_al["item_shop_size"] = price_key(shop_list_list)
 
-        item_al['item_discount'] = discount_key(discount_list_list)
-        item_al['item_percent'] = discount_key(percent_list_list)
-        item_al['item_sellerName'] = seller_len(seller_list_list)
-        item_al['location_list_list'] = deliver(location_list_list)
+        item_al["item_discount"] = discount_key(discount_list_list)
+        item_al["item_percent"] = discount_key(percent_list_list)
+        item_al["item_sellerName"] = seller_len(seller_list_list)
+        item_al["location_list_list"] = deliver(location_list_list)
         create_by = tid_maker()
-        item_al['create_by'] = create_by
+        item_al["create_by"] = create_by
 
         create_date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        item_all['item_ana'] = item_al
+        item_all["item_ana"] = item_al
 
+        item_al_json = json.dumps(item_al)
         for info in item_all["commodityInfo"]:
             models.BusProd.objects.create(
-                title=info['title'],
-                brand=info['brand'],
-                price=info['price'],
-                eva_num=info['evaNum'],
-                score=info['score'],
-                percent_rate=info['percentRate'],
-                pro_url=info['proUrl'],
-                location=info['location'],
-                keep_time=info['keepTime'],
-                shop_size=info['shopSize'],
-                seller_key=info['sellerKey'],
-                shop_rating=info['shopRating'],
-                con_home_url=info['con_home_url'],
+                title=str(info["title"]),
+                brand=str(info["brand"]),
+                price=str(info["price"]),
+                eva_num=str(info["evaNum"]),
+                score=str(info["score"]),
+                percent_rate=str(info["percentRate"]),
+                pro_url=str(info["proUrl"]),
+                location=str(info["location"]),
+                keep_time=str(info["keepTime"]),
+                shop_size=str(info["shopSize"]),
+                seller_key=str(info["sellerKey"]),
+                shop_rating=str(info['shopRating']),
+                con_home_url=str(info['con_home_url']),
                 discount=info['discount'],
                 class_info=info['classInfo'],
                 create_date=create_date,
@@ -150,7 +151,7 @@ def spider_detail(request):
                 is_del='0',
                 type='classes',
                 url=start_url,
-                item_ana_json=item_al,
+                item_ana_json=item_al_json,
             )
 
         item_list_all = json.dumps(item_all)
@@ -198,7 +199,35 @@ def spider_shop(request):
         item_al['item_sellerName'] = seller_len(seller_list_list)
         item_al['location_list_list'] = deliver(location_list_list)
 
-        item_all['item_ana'] = item_al
+        create_by = tid_maker()
+        item_al["create_by"] = create_by
+        create_date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        item_all["item_ana"] = item_al
+        item_al_json = json.dumps(item_al)
+        for info in item_all["commodityInfo"]:
+            models.BusProd.objects.create(
+                title=str(info["title"]),
+                brand=str(info["brand"]),
+                price=str(info["price"]),
+                eva_num=str(info["evaNum"]),
+                score=str(info["score"]),
+                percent_rate=str(info["percentRate"]),
+                pro_url=str(info["proUrl"]),
+                location=str(info["location"]),
+                keep_time=str(info["keepTime"]),
+                shop_size=str(info["shopSize"]),
+                seller_key=str(info["sellerKey"]),
+                shop_rating=str(info['shopRating']),
+                con_home_url=str(info['con_home_url']),
+                discount=info['discount'],
+                class_info=info['classInfo'],
+                create_date=create_date,
+                create_by=create_by,
+                is_del='0',
+                type='classes',
+                url=start_url,
+                item_ana_json=item_al_json,
+            )
         item_list_all = json.dumps(item_all)
 
         return HttpResponse(item_list_all)
@@ -246,7 +275,36 @@ def spider_keywords(request):
         item_al['item_sellerName'] = seller_len(seller_list_list)
         item_al['location_list_list'] = deliver(location_list_list)
 
-        item_all['item_ana'] = item_al
+        create_by = tid_maker()
+        item_al["create_by"] = create_by
+        create_date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        item_all["item_ana"] = item_al
+        item_al_json = json.dumps(item_al)
+        for info in item_all["commodityInfo"]:
+            models.BusProd.objects.create(
+                title=str(info["title"]),
+                brand=str(info["brand"]),
+                price=str(info["price"]),
+                eva_num=str(info["evaNum"]),
+                score=str(info["score"]),
+                percent_rate=str(info["percentRate"]),
+                pro_url=str(info["proUrl"]),
+                location=str(info["location"]),
+                keep_time=str(info["keepTime"]),
+                shop_size=str(info["shopSize"]),
+                seller_key=str(info["sellerKey"]),
+                shop_rating=str(info['shopRating']),
+                con_home_url=str(info['con_home_url']),
+                discount=info['discount'],
+                class_info=info['classInfo'],
+                create_date=create_date,
+                create_by=create_by,
+                is_del='0',
+                type='classes',
+                url=start_url,
+                item_ana_json=item_al_json,
+            )
+
         item_list_all = json.dumps(item_all)
 
         return HttpResponse(item_list_all)

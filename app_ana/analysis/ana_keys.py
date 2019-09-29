@@ -8,9 +8,9 @@ def price_key(list):
     price_max = np.max(list_arr)
     price_min = np.min(list_arr)
     price_avg = np.mean(list_arr)
-    price_data['max'] = round(float(price_max), 2)
-    price_data['min'] = round(float(price_min), 2)
-    price_data['avg'] = round(float(price_avg), 2)
+    price_data["max"] = round(float(price_max), 2)
+    price_data["min"] = round(float(price_min), 2)
+    price_data["avg"] = round(float(price_avg), 2)
     return price_data
 
 
@@ -22,9 +22,9 @@ def discount_key(lis):
     review_max = np.max(list_arr)
     review_min = np.min(list_arr)
     review_avg = np.mean(list_arr)
-    review_data['max'] = str(round(float(review_max), 2)) + '%'
-    review_data['min'] = str(round(float(review_min), 2)) + '%'
-    review_data['avg'] = str(round(float(review_avg), 2)) + '%'
+    review_data["max"] = str(round(float(review_max), 2)) + '%'
+    review_data["min"] = str(round(float(review_min), 2)) + '%'
+    review_data["avg"] = str(round(float(review_avg), 2)) + '%'
     return review_data
 
 
