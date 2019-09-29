@@ -5,13 +5,16 @@ from app_ana.analysis.ana_class import percentage_xing
 from app_ana.analysis.ana_keys import price_key, discount_key, seller_len, deliver
 from app_ana.spider.spider_shop import SpidersShop
 from django.views import View
+from app_ana import models
+from datetime import datetime
+from app_ana.uuid import tid_maker
 
 
 def spider_category(request):
 
     if request.method == "POST":
-        start_url = request.POST.get('start_url')
-        start_url= start_url.split('?')[0]
+        start_url_start = request.POST.get('start_url')
+        start_url= start_url_start.split('?')[0]
         spider = SpidersXing(start_url)
 
         item = {}
@@ -33,9 +36,17 @@ def spider_category(request):
 
         item['tip'] = item_1
         item['percentage'] = item_2
-
+        create_by = tid_maker()
+        item['create_by'] = create_by
+        create_date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         item_all_json = json.dumps(item)
-
+        models.BusStar.objects.create(
+            create_by=create_by,
+            create_date=create_date,
+            is_del='0',
+            json=item_all_json,
+            url=start_url_start,
+        )
         return HttpResponse(item_all_json)
     return HttpResponse('spdier_category')
 
@@ -111,10 +122,38 @@ def spider_detail(request):
         item_al['item_percent'] = discount_key(percent_list_list)
         item_al['item_sellerName'] = seller_len(seller_list_list)
         item_al['location_list_list'] = deliver(location_list_list)
+        create_by = tid_maker()
+        item_al['create_by'] = create_by
 
+        create_date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         item_all['item_ana'] = item_al
-        item_list_all = json.dumps(item_all)
 
+        for info in item_all["commodityInfo"]:
+            models.BusProd.objects.create(
+                title=info['title'],
+                brand=info['brand'],
+                price=info['price'],
+                eva_num=info['evaNum'],
+                score=info['score'],
+                percent_rate=info['percentRate'],
+                pro_url=info['proUrl'],
+                location=info['location'],
+                keep_time=info['keepTime'],
+                shop_size=info['shopSize'],
+                seller_key=info['sellerKey'],
+                shop_rating=info['shopRating'],
+                con_home_url=info['con_home_url'],
+                discount=info['discount'],
+                class_info=info['classInfo'],
+                create_date=create_date,
+                create_by=create_by,
+                is_del='0',
+                type='classes',
+                url=start_url,
+                item_ana_json=item_al,
+            )
+
+        item_list_all = json.dumps(item_all)
         return HttpResponse(item_list_all)
     return HttpResponse('spdier_category')
 

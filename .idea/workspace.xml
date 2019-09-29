@@ -2,12 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="27fa6745-4adc-4fa0-861f-6b498fba20d8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app_ana/uuid.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app_ana/spider/spider_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_ana/spider/spider_class.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app_ana/spider/spider_detail.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app_ana/spider/spider_keys.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app_ana/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_ana/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app_ana/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_ana/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app_ana/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_ana/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app_ana/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_ana/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_1/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/demo_1/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_1/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/demo_1/urls.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,30 +28,7 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
-    <expand>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="db" type="feb32156:DbDataSourceImpl" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="db" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="db" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="db" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
-        <item name="app01_name: table" type="3d80ac25:SqliteImplModel$Table" />
-      </path>
-    </expand>
+    <expand />
     <select />
   </component>
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
@@ -60,37 +39,55 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app_ana/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="139">
-              <caret line="47" column="22" lean-forward="true" selection-start-line="47" selection-start-column="22" selection-end-line="47" selection-end-column="22" />
+            <state relative-caret-position="3564">
+              <caret line="117" column="45" selection-start-line="117" selection-start-column="45" selection-end-line="117" selection-end-column="47" />
               <folding>
                 <element signature="e#0#59#0" expanded="true" />
-                <element signature="e#427#1499#0" />
-                <element signature="e#1535#3243#0" />
-                <element signature="e#3278#4986#0" />
-                <element signature="e#3315#4943#0" />
-                <element signature="e#5151#6859#0" />
-                <element signature="e#4585#4754#0" />
-                <element signature="e#4780#5119#0" />
-                <element signature="e#5146#5335#0" />
-                <element signature="e#5360#6009#0" />
-                <element signature="e#6035#20833#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app_ana/views_export.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="310">
+              <caret line="132" column="29" lean-forward="true" selection-start-line="132" selection-start-column="29" selection-end-line="132" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app_ana/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1320">
+              <caret line="111" column="70" selection-start-line="111" selection-start-column="70" selection-end-line="111" selection-end-column="70" />
+              <folding>
+                <element signature="n#!!doc" />
+                <element signature="e#581#1231#0" />
+                <element signature="e#1177#1231#0" />
+                <element signature="e#1269#1393#0" />
+                <element signature="e#1346#1393#0" />
+                <element signature="e#1442#1707#0" />
+                <element signature="e#1595#1707#0" />
+                <element signature="e#1750#2050#0" />
+                <element signature="e#1940#2050#0" />
+                <element signature="e#2087#2623#0" />
+                <element signature="e#2577#2623#0" />
+                <element signature="e#2666#2905#0" />
+                <element signature="e#2805#2905#0" />
+                <element signature="e#2957#3221#0" />
+                <element signature="e#3106#3221#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app_ana/spider/spider_shop.py">
+        <entry file="file://$PROJECT_DIR$/demo_1/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-                <element signature="e#66#4962#0" />
-                <element signature="e#936#1901#0" />
-                <element signature="e#1978#4962#0" />
-                <element signature="e#4991#5088#0" />
-              </folding>
+            <state relative-caret-position="2970">
+              <caret line="90" selection-start-line="90" selection-end-line="90" />
             </state>
           </provider>
         </entry>
@@ -98,27 +95,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app_ana/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="6" column="35" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app_ana/spider/spider_class.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="21">
-              <caret line="146" column="21" lean-forward="true" selection-start-line="146" selection-start-column="21" selection-end-line="146" selection-end-column="21" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-                <element signature="e#65#3938#0" />
-                <element signature="e#846#1568#0" />
-                <element signature="e#1719#3938#0" />
-                <element signature="e#5624#7843#0" />
-              </folding>
+            <state>
+              <caret column="7" selection-start-column="7" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -128,8 +106,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -151,6 +129,7 @@
       <find>pi-layout-container</find>
       <find>.style</find>
       <find>空</find>
+      <find>Bus_</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -163,11 +142,9 @@
         <option value="$PROJECT_DIR$/app01/serializers.py" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
         <option value="$USER_HOME$/AppData/Roaming/Python/Python36/site-packages/django/views/generic/base.py" />
-        <option value="$PROJECT_DIR$/demo_1/settings.py" />
         <option value="$PROJECT_DIR$/app01/models.py" />
         <option value="$PROJECT_DIR$/app01/spider.py" />
         <option value="$PROJECT_DIR$/app01/spider/spider_shop.py" />
-        <option value="$PROJECT_DIR$/demo_1/urls.py" />
         <option value="$PROJECT_DIR$/app01/spider/kk.html" />
         <option value="$PROJECT_DIR$/hh.html" />
         <option value="$PROJECT_DIR$/app01/analysis/ana_class.py" />
@@ -186,14 +163,24 @@
         <option value="$PROJECT_DIR$/app_ana/static/nepadmin/nepadmin/views/user/spider_keyword.html" />
         <option value="$PROJECT_DIR$/app_ana/static/nepadmin/nepadmin/lay/modules/api.js" />
         <option value="$PROJECT_DIR$/app_ana/spider/spider_shop.py" />
-        <option value="$PROJECT_DIR$/app_ana/urls.py" />
-        <option value="$PROJECT_DIR$/app_ana/views.py" />
         <option value="$PROJECT_DIR$/app_ana/spider/spider_class.py" />
         <option value="$PROJECT_DIR$/ww.html" />
+        <option value="$PROJECT_DIR$/app_ana/migrations/__init__.py" />
+        <option value="$PROJECT_DIR$/demo_1/__init__.py" />
+        <option value="$PROJECT_DIR$/app_ana/__init__.py" />
+        <option value="$PROJECT_DIR$/demo_1/settings.py" />
+        <option value="$PROJECT_DIR$/demo_1/urls.py" />
+        <option value="$PROJECT_DIR$/models.py" />
+        <option value="$PROJECT_DIR$/app_ana/uuid.py" />
+        <option value="$PROJECT_DIR$/app_ana/models" />
+        <option value="$PROJECT_DIR$/app_ana/urls.py" />
+        <option value="$PROJECT_DIR$/app_ana/models.py" />
+        <option value="$PROJECT_DIR$/app_ana/views.py" />
+        <option value="$PROJECT_DIR$/app_ana/views_export.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="693" />
     <option name="width" value="714" />
     <option name="height" value="1017" />
@@ -204,7 +191,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -216,14 +202,16 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app_ana/templates" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../公司爬虫" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -232,7 +220,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.language" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -259,29 +247,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.ceshi">
-    <configuration name="ana_keys" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="analyzeDemo" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app01/analysis" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app01/analysis/ana_keys.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.uuid">
     <configuration name="ceshi" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="analyzeDemo" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -370,6 +336,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="uuid" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="analyzeDemo" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app_ana" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app_ana/uuid.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="demo_1" type="Python.DjangoServer" factoryName="Django server">
       <module name="analyzeDemo" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -396,11 +384,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.uuid" />
         <item itemvalue="Python.ceshi" />
         <item itemvalue="Python.spider_detail" />
         <item itemvalue="Python.spider_class (1)" />
         <item itemvalue="Python.spdier" />
-        <item itemvalue="Python.ana_keys" />
       </list>
     </recent_temporary>
   </component>
@@ -419,22 +407,25 @@
       <workItem from="1568854576045" duration="18373000" />
       <workItem from="1568948420726" duration="16114000" />
       <workItem from="1569380019273" duration="21255000" />
-      <workItem from="1569459474016" duration="28082000" />
+      <workItem from="1569459474016" duration="28906000" />
+      <workItem from="1569546135173" duration="29517000" />
+      <workItem from="1569718807327" duration="536000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="127931000" />
+    <option name="totallyTimeSpent" value="158808000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1416" height="1026" extended-state="6" />
+    <frame x="693" y="0" width="714" height="1017" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.07964602" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.04587156" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3295964" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3352018" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.44170403" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -442,15 +433,15 @@
       <window_info anchor="bottom" id="Database Console" order="7" weight="0.3295964" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.3295964" />
-      <window_info anchor="bottom" id="Database Changes" order="10" weight="0.44506726" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.720852" />
+      <window_info anchor="bottom" id="Database Changes" order="10" weight="0.44394112" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.10645527" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="13" weight="0.6042601" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" />
-      <window_info anchor="right" id="Database" order="4" weight="0.33628318" />
+      <window_info anchor="right" id="Database" order="4" weight="0.46902654" />
     </layout>
     <layout-to-restore>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.022123894" />
@@ -481,6 +472,7 @@
     <option name="version" value="1" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/analyzeDemo$uuid.coverage" NAME="uuid Coverage Results" MODIFIED="1569563512388" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app_ana" />
     <SUITE FILE_PATH="coverage/demo_1$ana_class.coverage" NAME="ana_class Coverage Results" MODIFIED="1568883281015" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app01/analysis" />
     <SUITE FILE_PATH="coverage/demo_1$spdier.coverage" NAME="spdier Coverage Results" MODIFIED="1568974627664" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/demo_1$views.coverage" NAME="views Coverage Results" MODIFIED="1568959640014" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app01" />
@@ -493,57 +485,6 @@
     <SUITE FILE_PATH="coverage/analyzeDemo$spider_class__1_.coverage" NAME="spider_class (1) Coverage Results" MODIFIED="1569403004257" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app_ana/spider" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app_ana/apps.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/login.html" />
-    <entry file="das://7397418c-952a-41fd-8793-5e38ab91c7e1/schema/main/table/app01_name">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="766d06f9-c8f3-4e5f-b7bb-0a201dd98396">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Roaming/Python/Python36/site-packages/django/views/generic/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="72" selection-start-line="72" selection-end-line="72" />
-          <folding>
-            <element signature="e#464#816#0" />
-            <element signature="e#4437#5685#0" />
-            <element signature="e#5755#5988#0" />
-            <element signature="e#6021#7804#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Roaming/Python/Python36/site-packages/rest_framework/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-191">
-          <caret line="121" column="11" lean-forward="true" selection-start-line="121" selection-start-column="11" selection-end-line="121" selection-end-column="11" />
-          <folding>
-            <element signature="e#811#1544#0" />
-            <element signature="e#1595#2185#0" />
-            <element signature="e#2212#2378#0" />
-            <element signature="e#2422#3408#0" />
-            <element signature="e#4513#4871#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app01/serializers.py" />
-    <entry file="file://$PROJECT_DIR$/manage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="10" lean-forward="true" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app_ana/static/nepadmin/json/menu.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Temp/KuaiZip/009000e000d900d20025009a00190020.temp/demo_1/app01/urls.py" />
     <entry file="file://$USER_HOME$/AppData/Local/Temp/KuaiZip/008a00b2001200320090006b000500be.temp/demo_1/demo_1/urls.py" />
     <entry file="file://$USER_HOME$/Documents/Tencent Files/2686162923/FileRecv/views.py">
@@ -577,13 +518,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demo_1/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="42" column="1" lean-forward="true" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app_ana/analysis/ana_class.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -591,25 +525,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/KuaiZip/00a800a0007c005a00b900a100a70019.temp/demo_1/app01/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#59#0" expanded="true" />
-            <element signature="e#154#322#0" />
-            <element signature="e#347#686#0" />
-            <element signature="e#712#880#0" />
-            <element signature="e#904#1553#0" />
-            <element signature="e#1578#16376#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/KuaiZip/00a800a0007c005a00b900a100a70019.temp/demo_1/app01/views.py" />
     <entry file="file://$PROJECT_DIR$/hh.html" />
     <entry file="file://$PROJECT_DIR$/app_ana/spider/kk.html" />
-    <entry file="file://$PROJECT_DIR$/app_ana/models.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/../Python36/Lib/site-packages/jedi/third_party/typeshed/third_party/2/tornado/util.pyi">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="431">
@@ -620,13 +538,7 @@
     <entry file="file://$PROJECT_DIR$/ceshi.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app_ana/static/nepadmin/nepadmin/views/user/spider_keyword.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="4" column="16" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app_ana/static/nepadmin/nepadmin/views/user/spider_keyword.html" />
     <entry file="file://$PROJECT_DIR$/app_ana/templates/spider_shop.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -684,13 +596,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demo_1/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="5" column="14" lean-forward="true" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app_ana/static/nepadmin/nepadmin/lay/modules/api.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -712,108 +617,192 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app_ana/spider/spider_keys.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="94" column="19" lean-forward="true" selection-start-line="94" selection-start-column="19" selection-end-line="94" selection-end-column="19" />
-          <folding>
-            <element signature="e#493#1697#0" />
-            <element signature="e#1006#1071#0" />
-            <element signature="e#1735#3082#0" />
-            <element signature="e#1983#2914#0" />
-            <element signature="e#2113#2221#0" />
-            <element signature="e#2339#2546#0" />
-            <element signature="e#3088#3120#0" />
-            <element signature="e#3707#3882#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app_ana/spider/spider_detail.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-            <element signature="e#105#333#0" />
-            <element signature="e#371#899#0" />
-            <element signature="e#936#1901#0" />
-            <element signature="e#1978#4962#0" />
-            <element signature="e#4991#5088#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app_ana/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="6" column="35" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app_ana/spider/spider_keys.py" />
+    <entry file="file://$PROJECT_DIR$/app_ana/spider/spider_detail.py" />
+    <entry file="file://$PROJECT_DIR$/ww.html" />
     <entry file="file://$PROJECT_DIR$/app_ana/spider/spider_shop.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
+        <state relative-caret-position="99">
           <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
-            <element signature="e#66#4962#0" />
-            <element signature="e#936#1901#0" />
-            <element signature="e#1978#4962#0" />
-            <element signature="e#4991#5088#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app_ana/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="47" column="22" lean-forward="true" selection-start-line="47" selection-start-column="22" selection-end-line="47" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#59#0" expanded="true" />
-            <element signature="e#427#1499#0" />
-            <element signature="e#1535#3243#0" />
-            <element signature="e#3278#4986#0" />
-            <element signature="e#3315#4943#0" />
-            <element signature="e#5151#6859#0" />
-            <element signature="e#4585#4754#0" />
-            <element signature="e#4780#5119#0" />
-            <element signature="e#5146#5335#0" />
-            <element signature="e#5360#6009#0" />
-            <element signature="e#6035#20833#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ww.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="599" selection-start-line="599" selection-end-line="599" />
-          <folding>
-            <element signature="n#style#0;n#svg#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#0;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#13606#13611#0#HTML" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#h1#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#center#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#article#0;n#div#0;n#div#0;n#div#1;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#30487#30492#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app_ana/spider/spider_class.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="146" column="21" lean-forward="true" selection-start-line="146" selection-start-column="21" selection-end-line="146" selection-end-column="21" />
+        <state relative-caret-position="186">
+          <caret line="151" column="43" lean-forward="true" selection-start-line="151" selection-start-column="43" selection-end-line="151" selection-end-column="43" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
             <element signature="e#65#3938#0" />
             <element signature="e#846#1568#0" />
             <element signature="e#1719#3938#0" />
-            <element signature="e#5624#7843#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Python36/Lib/site-packages/passlib/handlers/django.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2772" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Python36/Lib/site-packages/passlib/handlers/mysql.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-611">
+          <folding>
+            <element signature="e#1006#1030#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app_ana/migrations/0001_initial.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo_1/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app_ana/migrations/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/68415038-26a4-4ce7-915a-d107d1d3410e/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/cbaf7355-8191-4e7b-9a40-096c972cacb2/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Python36/Lib/site-packages/pymysql/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="119" column="4" selection-start-line="119" selection-start-column="4" selection-end-line="119" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app_ana/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="33">
+          <caret line="1" column="20" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo_1/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="2" column="38" lean-forward="true" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Python36/Lib/uuid.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="572" column="4" selection-start-line="572" selection-start-column="4" selection-end-line="572" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Roaming/Python/Python36/site-packages/django/views/generic/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="46" column="8" selection-start-line="46" selection-start-column="8" selection-end-line="46" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2019.1/system/python_stubs/-1184660488/_io.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2430">
+          <caret line="1188" column="6" selection-start-line="1188" selection-start-column="6" selection-end-line="1188" selection-end-column="6" />
+          <folding>
+            <element signature="e#44762#45003#0" />
+            <element signature="e#45079#45143#0" />
+            <element signature="e#45215#45426#0" />
+            <element signature="e#45502#45565#0" />
+            <element signature="e#45641#45772#0" />
+            <element signature="e#45844#46197#0" />
+            <element signature="e#46273#46338#0" />
+            <element signature="e#46410#46462#0" />
+            <element signature="e#46538#46784#0" />
+            <element signature="e#46860#46926#0" />
+            <element signature="e#46999#47175#0" />
+            <element signature="e#47255#47259#0" />
+            <element signature="e#47335#47339#0" />
+            <element signature="e#47450#47542#0" />
+            <element signature="e#47618#47660#0" />
+            <element signature="e#47740#47744#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app_ana/migrations/0002_appanastarlevel_authgroup_authgrouppermissions_authpermission_authuser_authusergroups_authuseruserpe.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1089" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app_ana/models" />
+    <entry file="file://$PROJECT_DIR$/app_ana/uuid.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app_ana/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3564">
+          <caret line="117" column="45" selection-start-line="117" selection-start-column="45" selection-end-line="117" selection-end-column="47" />
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app_ana/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1320">
+          <caret line="111" column="70" selection-start-line="111" selection-start-column="70" selection-end-line="111" selection-end-column="70" />
+          <folding>
+            <element signature="n#!!doc" />
+            <element signature="e#581#1231#0" />
+            <element signature="e#1177#1231#0" />
+            <element signature="e#1269#1393#0" />
+            <element signature="e#1346#1393#0" />
+            <element signature="e#1442#1707#0" />
+            <element signature="e#1595#1707#0" />
+            <element signature="e#1750#2050#0" />
+            <element signature="e#1940#2050#0" />
+            <element signature="e#2087#2623#0" />
+            <element signature="e#2577#2623#0" />
+            <element signature="e#2666#2905#0" />
+            <element signature="e#2805#2905#0" />
+            <element signature="e#2957#3221#0" />
+            <element signature="e#3106#3221#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo_1/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2970">
+          <caret line="90" selection-start-line="90" selection-end-line="90" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app_ana/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="7" selection-start-column="7" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app_ana/views_export.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="132" column="29" lean-forward="true" selection-start-line="132" selection-start-column="29" selection-end-line="132" selection-end-column="29" />
         </state>
       </provider>
     </entry>
